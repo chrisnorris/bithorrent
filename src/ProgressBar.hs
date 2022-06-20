@@ -11,8 +11,7 @@
 
 module ProgressBar
   ( viewBar
-  )
-where
+  ) where
 
 
 import           Control.Concurrent.Async
@@ -23,6 +22,8 @@ import           Data.ByteString.UTF8
 import           Text.Printf
 
 
+viewBar
+  :: (RealFrac a, Enum b, Text.Printf.PrintfArg a, Num b) => b -> a -> IO ()
 viewBar step fileSize = do
   downloadedMVar <- newEmptyMVar >>= performDownload 0
   putStrLn "Begining download for: linuxmint-17-kde-dvd-32bit.iso.torrent"
@@ -56,4 +57,3 @@ viewBar step fileSize = do
     <> [C8.pack " (Peers 17, 8.923bit/s)\r"]
     )
     where format4dp = printf "%.4g"
-
