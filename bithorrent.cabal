@@ -26,7 +26,7 @@ source-repository head
 library
   exposed-modules:
       Core
-      Lib
+      ProgressBar
   other-modules:
       Paths_bithorrent
   hs-source-dirs:

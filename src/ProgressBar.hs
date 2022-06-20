@@ -1,4 +1,15 @@
-module Lib
+-----------------------------------------------------------------------------
+-- |
+-- Module      :  ProgressBar
+-- Copyright   :  (C) 2022 Christopher Norris
+-- License     :  MIT-style (see the file LICENSE)
+-- Maintainer  :  Christopher Norris <@gmail.com>
+-- Stability   :  provisional
+-- Portability :  portable
+--
+----------------------------------------------------------------------------
+
+module ProgressBar
   ( viewBar
   )
 where
@@ -27,7 +38,7 @@ viewBar step fileSize = do
     loop n = do
       putMVar mvar n
       threadDelay $ 100000 * round n
-      loop $ n + 0.31
+      loop $ n + 0.031
 
   progressBar :: (RealFrac a, PrintfArg a) => a -> a -> IO ()
   progressBar max progress = C8.putStr $ C8.concat

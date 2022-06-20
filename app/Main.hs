@@ -1,4 +1,5 @@
 import Core
+import ProgressBar
 
 
-main = run
+main = viewBar 100 (3.1 :: Double)
