@@ -1,0 +1,4 @@
+import Core
+
+
+main = run

@@ -1,0 +1,187 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           bithorrent
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/bithorrent#readme>
+homepage:       https://github.com/githubuser/bithorrent#readme
+bug-reports:    https://github.com/githubuser/bithorrent/issues
+author:         Christopher Norris
+maintainer:     example@example.com
+copyright:      2022 CNorris
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/bithorrent
+
+library
+  exposed-modules:
+      Core
+      Lib
+  other-modules:
+      Paths_bithorrent
+  hs-source-dirs:
+      src
+  default-extensions:
+      BangPatterns
+      DeriveGeneric
+      DeriveFunctor
+      DuplicateRecordFields
+      ExistentialQuantification
+      FlexibleContexts
+      GeneralizedNewtypeDeriving
+      InstanceSigs
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      OverloadedStrings
+      PackageImports
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      StandaloneDeriving
+      TemplateHaskell
+      TupleSections
+      TypeApplications
+      UndecidableInstances
+      ViewPatterns
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , base16-bytestring
+    , bencode
+    , binary
+    , byteable
+    , bytestring
+    , containers
+    , cryptohash
+    , http-client
+    , http-conduit
+    , http-types
+    , iproute
+    , lens
+    , network
+    , say
+    , text
+    , uri-bytestring
+    , utf8-string
+    , yaml
+  default-language: Haskell2010
+
+executable bithorrent-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_bithorrent
+  hs-source-dirs:
+      app
+  default-extensions:
+      BangPatterns
+      DeriveGeneric
+      DeriveFunctor
+      DuplicateRecordFields
+      ExistentialQuantification
+      FlexibleContexts
+      GeneralizedNewtypeDeriving
+      InstanceSigs
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      OverloadedStrings
+      PackageImports
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      StandaloneDeriving
+      TemplateHaskell
+      TupleSections
+      TypeApplications
+      UndecidableInstances
+      ViewPatterns
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , base16-bytestring
+    , bencode
+    , binary
+    , bithorrent
+    , byteable
+    , bytestring
+    , containers
+    , cryptohash
+    , http-client
+    , http-conduit
+    , http-types
+    , iproute
+    , lens
+    , network
+    , say
+    , text
+    , uri-bytestring
+    , utf8-string
+    , yaml
+  default-language: Haskell2010
+
+test-suite bithorrent-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_bithorrent
+  hs-source-dirs:
+      test
+  default-extensions:
+      BangPatterns
+      DeriveGeneric
+      DeriveFunctor
+      DuplicateRecordFields
+      ExistentialQuantification
+      FlexibleContexts
+      GeneralizedNewtypeDeriving
+      InstanceSigs
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      OverloadedStrings
+      PackageImports
+      RankNTypes
+      RecordWildCards
+      ScopedTypeVariables
+      StandaloneDeriving
+      TemplateHaskell
+      TupleSections
+      TypeApplications
+      UndecidableInstances
+      ViewPatterns
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , base16-bytestring
+    , bencode
+    , binary
+    , bithorrent
+    , byteable
+    , bytestring
+    , containers
+    , cryptohash
+    , http-client
+    , http-conduit
+    , http-types
+    , iproute
+    , lens
+    , network
+    , say
+    , text
+    , uri-bytestring
+    , utf8-string
+    , yaml
+  default-language: Haskell2010

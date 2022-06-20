@@ -1,0 +1,94 @@
+# @format
+
+name: bithorrent
+version: 0.1.0.0
+github: 'githubuser/bithorrent'
+license: BSD3
+author: 'Christopher Norris'
+maintainer: 'example@example.com'
+copyright: '2022 CNorris'
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+default-extensions:
+    - BangPatterns
+    - DeriveGeneric
+    - DeriveFunctor
+    - DuplicateRecordFields
+    - ExistentialQuantification
+    - FlexibleContexts
+    - GeneralizedNewtypeDeriving
+    - InstanceSigs
+    - LambdaCase
+    - MultiWayIf
+    - NamedFieldPuns
+    - OverloadedStrings
+    - PackageImports
+    - RankNTypes
+    - RecordWildCards
+    - ScopedTypeVariables
+    - StandaloneDeriving
+    - TemplateHaskell
+    - TupleSections
+    - TypeApplications
+    # - TypeFamilies -- conflicts with Template haskell
+    - UndecidableInstances
+    - ViewPatterns
+
+# Metadata used when publishing your package
+# synopsis:            Bit torrent client in haskell
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/githubuser/bithorrent#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- async
+- bencode
+- lens
+- cryptohash
+- containers
+- http-client
+- http-conduit
+- yaml
+- byteable
+- http-types
+- iproute
+- base16-bytestring
+- network
+- bytestring
+- uri-bytestring
+- utf8-string
+- binary
+- text
+- say
+
+library:
+    source-dirs: src
+
+executables:
+    bithorrent-exe:
+        main: Main.hs
+        source-dirs: app
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - bithorrent
+
+tests:
+    bithorrent-test:
+        main: Spec.hs
+        source-dirs: test
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - bithorrent
